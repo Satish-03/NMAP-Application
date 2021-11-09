@@ -17,7 +17,7 @@ def ArgParse_Helper():
 
 def TCP_ACK(ip, port_list):
     for each_port in port_list:
-        print(f"Scaning for port {each_port}...\n")
+        print(f"Scanning for port {each_port}...\n")
         ans, unans = sr( IP(dst=ip)/TCP(flags='A', dport=(each_port)), timeout=5)
         if len(ans) > 0:
             for sent,received in ans:
@@ -34,7 +34,7 @@ def TCP_ACK(ip, port_list):
 
 def TCP_SYN(ip, port_list):
     for each_port in port_list:
-        print(f"Scaning for port {each_port}...\n")
+        print(f"Scanning for port {each_port}...\n")
         ans, unans = sr( IP(dst=ip)/TCP(flags='S', dport=(each_port)), timeout=5)
         if len(ans) > 0:
             for sent,received in ans:
@@ -51,7 +51,7 @@ def TCP_SYN(ip, port_list):
 
 def UDP_scan(ip, port_list):
     for each_port in port_list:
-        print(f"Scaning for port {each_port}...\n")
+        print(f"Scanning for port {each_port}...\n")
         ans, unans = sr( IP(dst=ip)/UDP(dport=(each_port)), timeout=5)
         if len(ans) > 0:
             for sent,received in ans:
